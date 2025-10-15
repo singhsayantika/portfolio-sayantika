@@ -17,3 +17,5 @@ A responsive single-page portfolio showcasing projects and skills. Built to demo
 - cursor ai 
 
 ## live deployment link
+- https://singhsayantika.github.io/portfolio-sayantika/
+
