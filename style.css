@@ -1,0 +1,32 @@
+:root{--accent:#5b6cff;--text:#0b1220;--bg:#ffffff;--muted:#4b5563;--surface:#f7f8fa;--border:#e5e7eb;--max-width:1100px;font-family:Inter,system-ui,Arial}
+@media (prefers-color-scheme: dark){:root{--bg:#0b0d10;--text:#e6edf3;--muted:#9aa7b2;--surface:#12161b;--border:#20262d}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:var(--bg);line-height:1.6}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 12px}
+.site-header{background:color-mix(in oklab,var(--bg) 90%,transparent);position:sticky;top:0;border-bottom:1px solid var(--border);backdrop-filter:saturate(1.1) blur(6px);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:700;text-decoration:none;color:var(--accent)}
+.nav-links{list-style:none;display:flex;gap:16px;margin:0;padding:0;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:inherit;padding:6px 8px;border-radius:8px}
+.nav-links a:focus-visible,.nav-links a:hover{background:color-mix(in oklab,var(--surface) 86%,transparent)}
+.hero{display:grid;gap:20px;grid-template-columns:1.1fr .9fr;align-items:center;margin:40px auto}
+.hero-left h1{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 10px}
+.cta{display:inline-block;margin-top:10px;padding:10px 16px;background:var(--accent);color:white;border-radius:10px;text-decoration:none;transition:transform .18s,filter .18s}
+.cta:hover{transform:translateY(-3px);filter:brightness(1.05)}
+.hero-right img{width:100%;max-width:260px;border-radius:12px;object-fit:cover}
+.about,.projects,.contact{margin:40px auto}
+.about .container,.projects .container,.contact .container{display:block}
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.project-card{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:transform .18s,box-shadow .18s}
+.project-card:hover{transform:translateY(-6px)}
+input,textarea,button{width:100%;padding:10px;margin-top:8px;border-radius:10px;border:1px solid var(--border);background:color-mix(in oklab,var(--surface) 92%,transparent);color:var(--text)}
+button{background:var(--accent);color:#fff;border:none;cursor:pointer}
+.site-footer{text-align:center;padding:18px;border-top:1px solid var(--border);margin-top:40px;color:var(--muted)}
+/* layout wrappers */
+.site-header .nav,.hero,.about,.projects,.contact,.site-footer .container{max-width:var(--max-width);margin:0 auto;padding:0 12px}
+/* responsive */
+@media (max-width:900px){.hero .container{grid-template-columns:1fr}.hero{text-align:center}.hero-right img{margin:0 auto;max-width:200px}}
+@media (max-width:700px){.nav-links{gap:10px}.project-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}}
+/* motion */
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.cta{transition:none}.project-card{transition:none}}
